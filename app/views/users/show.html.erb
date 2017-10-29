@@ -1,0 +1,15 @@
+<%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %>'s Playlist
+<table>
+  <tr>
+    <th>Artist</th>
+    <th>Title</th>
+    <th>Times Added</th>
+  </tr>
+  <% @song_list.uniq.each do |song| %>
+    <tr>
+      <td><%= song.artist %></td>
+      <td><%= song.title %></td>
+      <td><%= song.added_by.count %></td>
+    </tr>
+  <% end %>
+</table>
